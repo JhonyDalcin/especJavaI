@@ -115,7 +115,7 @@ public class Teste {
                     
                 case 5:
                     String plate = l.dataEnter("\nDigita a placa do veiculo: ");
-                    if (existentPasseioRegistrationPlate(plate)) {
+                    if (existentPlate(plate)) {
                         for (Passeio p : arrayPasseio){
                             if (p != null) {
                                 if (p.getPlaca().equals(plate)){
@@ -132,7 +132,7 @@ public class Teste {
                     
                 case 6:
                     plate = l.dataEnter("\nDigita a placa do veiculo: ");
-                    if (existentCargaRegistrationPlate(plate)) {
+                    if (existentPlate(plate)) {
                         for (Carga c : arrayCarga){
                             if (c != null){
                                 if (c.getPlaca().equals(plate)){
@@ -176,8 +176,8 @@ public class Teste {
         }
         return -1;
     }
-    
-    public static boolean existentPasseioRegistrationPlate(String plate){
+
+    public static boolean existentPlate(String plate) {
         for (Passeio p: arrayPasseio){
             if (p != null){
                 if (p.getPlaca().equals(plate)){
@@ -185,10 +185,6 @@ public class Teste {
                 }
             }
         }
-        return false;
-    }
-    
-    public static boolean existentCargaRegistrationPlate(String plate){
         for (Carga c: arrayCarga){
             if (c != null) {
                 if (c.getPlaca().equals(plate)){
@@ -204,7 +200,7 @@ public class Teste {
         String placa = l.dataEnter("\nDigite a placa: ");
         
         //validation of existent plate
-        if (existentPasseioRegistrationPlate(placa)){
+        if (existentPlate(placa)){
             return false;
         }
         
@@ -225,7 +221,7 @@ public class Teste {
         String placa = l.dataEnter("\nDigite a placa: ");
         
         //validation of existent plate
-        if (existentCargaRegistrationPlate(placa)){
+        if (existentPlate(placa)){
             return false;
         }
         
