@@ -81,10 +81,11 @@ public abstract class Veiculo {
     public final void setCor(String cor) {
         this.cor = cor;
     }
-
-    public final void setVelocMax(float velocMax) {
+    
+    protected final void setVelocMax(float velocMax){
         this.velocMax = velocMax;
     }
+        
 
     public final void setQtdRodas(int qtdRodas) {
         this.qtdRodas = qtdRodas;
@@ -95,6 +96,7 @@ public abstract class Veiculo {
     }
     
     public abstract float calcVel(float velocMax);
+    
     public abstract void printInfo();
     
     public String getVeiculoInfo() {

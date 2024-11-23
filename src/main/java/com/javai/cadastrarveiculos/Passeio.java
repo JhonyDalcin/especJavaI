@@ -22,13 +22,13 @@ public final class Passeio extends Veiculo implements Calcular {
     public void setQtdPassageiros(int qtdPassageiros) {
         this.qtdPassageiros = qtdPassageiros;
     }
-
+    
     @Override    
     public float calcVel(float velocMax){
         float velocMaxMetrosHora = velocMax *1000;   
         return velocMaxMetrosHora;
     }
-    
+        
     @Override
     public void printInfo(){
         
