@@ -4,6 +4,8 @@
 
 package com.javai.cadastrarveiculos;
 
+import java.util.List;
+
 /**
  *
  * @author jhonydalcin
@@ -30,7 +32,9 @@ public class Teste {
                                 4. Imprimir Todos os Veiculos de Carga
                                 5. Imprimir Veiculo de Passeio pela Placa
                                 6. Imprimir Veiculo de Carga pela Placa
-                                7. Sair do sistema
+                                7. Excluir Veiculo de Passeio pela Placa
+                                8. Excluir Veiculo de Carga pela Placa
+                                9. Sair do sistema
                                """);
             
             try {
@@ -47,19 +51,15 @@ public class Teste {
                 case 1:
                     boolean continueRegistering = false;
                     do{
-                        int emptyPosition = bd.arrayPasseioEmptyPosition();
-                        if (emptyPosition < 0){
-                            System.out.println("\nVeiculo de PASSEIO, NAO registrado! Vetor esta cheio.");
-                        }else {
-                            Passeio passeio = new Passeio();
-                            boolean validRegistrationData = passeioRegistration(passeio);
-                            if (validRegistrationData){
-                                bd.addVeiculoPasseio(passeio, emptyPosition);
-                            } else {
-                                System.out.println("\nErro na entrada de dados de registro. Veiculo passeio NAO registrado!");
+                        Passeio passeio = new Passeio();
+                        boolean validRegistrationData = passeioRegistration(passeio);
+                        if (validRegistrationData){
+                            bd.addVeiculoPasseio(passeio);
+                            System.out.println("\nVeiculo de passeio registrado com sucesso!");
+                        } else {
+                            System.out.println("\nErro na entrada de dados de registro. Veiculo passeio NAO registrado!");
                             }
-                            continueRegistering = continueRegisteringValidation();
-                        }
+                        continueRegistering = continueRegisteringValidation();
                     } while (continueRegistering);                    
                     break;
                     
@@ -67,47 +67,84 @@ public class Teste {
                 case 2:
                     continueRegistering = false;
                     do {
-                        int emptyPosition = bd.arrayCargaEmptyPosition();
-                        if (emptyPosition < 0){
-                            System.out.println("\nVeiculo de CARGA, NAO registrado! Vetor esta cheio.");
-                        }else {
-                            Carga carga = new Carga();
-                            boolean validRegistrationData = cargaRegistration(carga);
-                            if (validRegistrationData){
-                                bd.addVeiculoCarga(carga, emptyPosition);
-                            } else {
-                                System.out.println("\nErro na entrada de dados de registro. Veiculo passeio NAO registrado!");
+                        Carga carga = new Carga();
+                        boolean validRegistrationData = cargaRegistration(carga);
+                        if (validRegistrationData){
+                            bd.addVeiculoCarga(carga);
+                            System.out.println("\nVeiculo de carga registrado com sucesso!");                            
+                        } else {
+                            System.out.println("\nErro na entrada de dados de registro. Veiculo carga NAO registrado!");
                             }
-                            continueRegistering = continueRegisteringValidation();
-                        }
+                        continueRegistering = continueRegisteringValidation();
                     } while (continueRegistering);
                     break;
                     
                 case 3:
-                    bd.printPasseios();
+                    List<Passeio> listPasseio = bd.getListPasseio();
+                    if (listPasseio != null){
+                        for (Passeio p : listPasseio){
+                            System.out.println("\n");
+                            p.printInfo();
+                        }
+                    }else {
+                        System.out.println("\nNenhum veiculo de passeio registrado!");
+                    }
                     endMenuFunctionCleanning();
                     break;
-                    
-                    
+                        
                 case 4:
-                    bd.printCargas();
+                    List<Carga> listCarga = bd.getListCarga();
+                    if (listCarga != null) {
+                        for (Carga c: listCarga){
+                            System.out.println("\n");
+                            c.printInfo();
+                        }
+                    }else {
+                        System.out.println("\nNenhum veiculo de carga registrado!");
+                    }
                     endMenuFunctionCleanning();
                     break;
                     
                 case 5:
-                    String platePasseio = l.dataEnter("\nDigita a placa do veiculo: ");
-                    bd.printPasseioByPlate(platePasseio);
+                    String platePasseio = plateEntry();
+                    Passeio p = bd.printPasseioByPlate(platePasseio);
+                    if (p != null){
+                        System.out.println("\n");
+                        p.printInfo();
+                    }else {
+                        System.out.println("\n\nPlaca do veiculo de passeio informada, nao registrada!");
+                    }
                     endMenuFunctionCleanning();
                     break;
                     
                 case 6:
-                    String plateCarga = l.dataEnter("\nDigita a placa do veiculo: ");
-                    bd.printCargaByPlate(plateCarga);
+                    String plateCarga = plateEntry();
+                    Carga c = bd.printCargaByPlate(plateCarga);
+                    if (c != null){
+                        System.out.println("\n");
+                        c.printInfo();
+                    }else {
+                        System.out.println("\n\nPlaca do veiculo de carga informada, nao registrada!");
+                    }                   
                     endMenuFunctionCleanning();
                     break;
+                
                 case 7:
+                    String plate = plateEntry();
+                    System.out.println((bd.removeVeiculoPasseio(plate)) ? "\nVeiculo de passeio removido com sucesso!" : "\nPlaca nao encontrada!");
+                    endMenuFunctionCleanning();
+                    break;
+
+                case 8:
+                    plate = plateEntry();
+                    System.out.println((bd.removeVeiculoCarga(plate)) ? "\nVeiculo de carga removido com sucesso!" : "\nPlaca nao encontrada!");
+                    endMenuFunctionCleanning();
+                    break;
+                    
+                case 9:
                     keepRunning = false;
                     break;
+                    
                 default:
                     System.out.println("\nVoce selecionou: "+ option + "\nPor gentileza selecione uma opcao valida.");
                     endMenuFunctionCleanning();
@@ -115,10 +152,15 @@ public class Teste {
             }            
         }      
     }
+    
+        public static String plateEntry(){
+        String plate = l.dataEnter("Digite a placa: ");
+        return plate;
+    }
         
     public static boolean passeioRegistration (Passeio p){
         
-        String placa = l.dataEnter("\nDigite a placa: ");
+        String placa = plateEntry();
         
         //validation of existent plate
         try {
@@ -141,16 +183,22 @@ public class Teste {
             p.setVelocMax(100);
             System.out.println("Velocidade maxima atribuida automaticamente: " + p.getVelocMax()+ " km/h\n" );
         }
-        p.setQtdRodas(Integer.parseInt(l.dataEnter("Digita a quantidade de rodas: ")));
-        p.getMotor().setQtdPist(Integer.parseInt(l.dataEnter("Digita a quantidade de pistao: ")));
-        p.getMotor().setPotencia(Integer.parseInt(l.dataEnter("Digita a potencia: ")));
-        p.setQtdPassageiros(Integer.parseInt(l.dataEnter("Digita a quantidade de passageiros: ")));
+        try {
+            p.setQtdRodas(Integer.parseInt(l.dataEnter("Digita a quantidade de rodas: ")));
+            p.getMotor().setQtdPist(Integer.parseInt(l.dataEnter("Digita a quantidade de pistao: ")));
+            p.getMotor().setPotencia(Integer.parseInt(l.dataEnter("Digita a potencia: ")));
+            p.setQtdPassageiros(Integer.parseInt(l.dataEnter("Digita a quantidade de passageiros: ")));
+        } catch (NumberFormatException nfe) {
+            nfe.toString();
+            System.out.println("O ultimo valor entrado deve ser do tipo numero, inteiro!");
+            return false;
+        }
         return true;   
     }
-    
+        
     public static boolean cargaRegistration (Carga c){
         
-        String placa = l.dataEnter("\nDigite a placa: ");    
+        String placa = plateEntry();    
         //validation of existent plate
         try {
             bd.existentPlate(placa);
@@ -172,11 +220,17 @@ public class Teste {
             c.setVelocMax(90);
             System.out.println("Velocidade maxima atribuida automaticamente: " + c.getVelocMax()+ " km/h\n" );
         }
-        c.setQtdRodas(Integer.parseInt(l.dataEnter("Digita a quantidade de rodas: ")));
-        c.getMotor().setQtdPist(Integer.parseInt(l.dataEnter("Digita a quantidade de pistao: ")));
-        c.getMotor().setPotencia(Integer.parseInt(l.dataEnter("Digita a potencia: ")));
-        c.setTara(Integer.parseInt(l.dataEnter("Digita a tara: ")));
-        c.setCargaMAx(Integer.parseInt(l.dataEnter("Digita a carga maxima: ")));
+        try {
+            c.setQtdRodas(Integer.parseInt(l.dataEnter("Digita a quantidade de rodas: ")));
+            c.getMotor().setQtdPist(Integer.parseInt(l.dataEnter("Digita a quantidade de pistao: ")));
+            c.getMotor().setPotencia(Integer.parseInt(l.dataEnter("Digita a potencia: ")));
+            c.setTara(Integer.parseInt(l.dataEnter("Digita a tara: ")));
+            c.setCargaMAx(Integer.parseInt(l.dataEnter("Digita a carga maxima: ")));
+        } catch (NumberFormatException nfe) {
+            nfe.toString();
+            System.out.println("\nO ultimo valor entrado deve ser do tipo numero, inteiro!");
+            return false;
+        }
         return true;
     }
     
@@ -184,12 +238,12 @@ public class Teste {
         boolean newRegistration = false; 
         boolean askAgain = true;
         while (askAgain){
-            String repeat = l.dataEnter("\nDeseja cadastrar mais um veiculo de carga? S/N ").toUpperCase();
-            if (repeat.equals("S")){
+            String repeat = l.dataEnter("\nDeseja cadastrar mais um veiculo? <s/n> ");
+            if (repeat.equalsIgnoreCase("s")){
                 askAgain = false;
                 newRegistration = true;
             }
-            else if (repeat.equals("N")) {
+            else if (repeat.equalsIgnoreCase("n")) {
                 askAgain = false;
             }
             else {

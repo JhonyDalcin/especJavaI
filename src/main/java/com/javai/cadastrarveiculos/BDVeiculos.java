@@ -5,86 +5,66 @@
  */
 package com.javai.cadastrarveiculos;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  *
  * @author jhony
  */
 public class BDVeiculos {
     
-    static Passeio[] arrayPasseio = new Passeio[5];
-    static Carga[] arrayCarga = new Carga[5];
-    
+    private List<Passeio> bdPasseio = new ArrayList<>();
+    private List<Carga> bdCarga = new ArrayList<>();
+        
     public BDVeiculos(){
     }
 
-    public static Passeio[] getArrayPasseio() {
-        return arrayPasseio;
+    public List<Passeio> getListPasseio() {
+        return bdPasseio;
     }
 
-    public static Carga[] getArrayCarga() {
-        return arrayCarga;
+    public List<Carga> getListCarga() {
+        return bdCarga;
+    }
+        
+    public void addVeiculoPasseio(Passeio passeio){
+        bdPasseio.add(passeio);
     }
     
-    public void printPasseios (){
-        if (arrayPasseioEmptyPosition() == 0){
-            System.out.println("Nenhum veiculo PAASEIO registrado!");
-        }
-        for (Passeio p : arrayPasseio){
-            if (p != null) {
-                p.printInfo();
+    public void addVeiculoCarga(Carga carga){
+        bdCarga.add(carga);
+    }
+    
+    public boolean removeVeiculoPasseio(String plate) {
+        for (Passeio p: bdPasseio){
+            if (p.getPlaca().equals(plate)){
+                bdPasseio.remove(p);
+                return true;
             }
         }
+        return false;
     }
     
-    public void printCargas (){
-        if (arrayCargaEmptyPosition() == 0){
-            System.out.println("\nNenhum veiculo PAASEIO registrado!");
-        }
-        for (Carga c : arrayCarga){
-            if (c != null){
-                c.printInfo();
+    public boolean removeVeiculoCarga(String plate) {
+        for (Carga c: bdCarga){
+            if (c.getPlaca().equals(plate)){
+                bdCarga.remove(c);
+                return true;
             }
         }
+        return false;
     }
-    
-    public void addVeiculoPasseio(Passeio passeio, int position){
-            arrayPasseio[position] = passeio;
-            System.out.println("\nVeiculo PASSEIO cadastrado com sucesso!");
-    }
-    
-    public void addVeiculoCarga(Carga carga, int position){
-            arrayCarga[position] = carga;
-            System.out.println("\nVeiculo CARGA cadastrado com sucesso!");
-    }
-    
-    public int arrayPasseioEmptyPosition() {
-        for(int i=0; i<arrayPasseio.length; i++){
-            if (arrayPasseio[i] == null){
-                return i;
-            }
-        }
-        return -1;         
-    }
-    
-    public int arrayCargaEmptyPosition() {
-        for(int i=0; i<arrayCarga.length; i++){
-            if (arrayCarga[i] == null){
-                return i;
-            }
-        }
-        return -1;         
-    }
-    
     
     public void existentPlate(String plate) throws VeicExistException {
-        for (Passeio p: arrayPasseio){
+        for (Passeio p: bdPasseio){
             if (p != null){
                 if (p.getPlaca().equals(plate)){
                     throw new VeicExistException();
                 }
             }
         }
-        for (Carga c: arrayCarga){
+        for (Carga c: bdCarga){
             if (c != null) {
                 if (c.getPlaca().equals(plate)){
                     throw new VeicExistException();
@@ -93,34 +73,22 @@ public class BDVeiculos {
         }
     }
 
-    public void printPasseioByPlate (String plate){
-        boolean plateFound = false;
-        for (Passeio p: arrayPasseio){
-            if (p != null){
-                if (p.getPlaca().equals(plate)){
-                    plateFound = true;
-                    p.printInfo();
+    public Passeio printPasseioByPlate (String plate){
+        for (Passeio p: bdPasseio){
+            if (p.getPlaca().equals(plate)){
+                return p;
                 }                
-            }
         }
-        if (!plateFound){
-            System.out.println("Placa de veiculo de PASSEIO informada não registrada");
-        }
+        return null;
     }
     
-    public void printCargaByPlate (String plate){
-        boolean plateFound = false;
-        for (Carga c: arrayCarga){
-            if (c != null) {
-                if (c.getPlaca().equals(plate)){
-                    plateFound = true;
-                    c.printInfo();
+    public Carga printCargaByPlate (String plate){
+        for (Carga c: bdCarga){
+            if (c.getPlaca().equals(plate)){
+                return c;
                 }                
-            }
         }
-        if (!plateFound){
-            System.out.println("Placa de veiculo de CARGA informada não registrada");
-        }
+        return null;
     }
     
 }

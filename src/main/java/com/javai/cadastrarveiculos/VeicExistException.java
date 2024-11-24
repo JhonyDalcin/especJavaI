@@ -11,7 +11,7 @@ package com.javai.cadastrarveiculos;
 public class VeicExistException extends Exception{
     
     public VeicExistException() {
-        System.out.println("\nPlaca informada existente!");
+        System.out.println("\nPlaca do veiculo informada ja cadastrada!");
     }
     
 }
