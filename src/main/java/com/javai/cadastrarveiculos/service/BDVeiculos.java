@@ -3,8 +3,11 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package com.javai.cadastrarveiculos;
+package com.javai.cadastrarveiculos.service;
 
+import com.javai.cadastrarveiculos.model.Carga;
+import com.javai.cadastrarveiculos.model.Passeio;
+import com.javai.cadastrarveiculos.util.exception.VeicExistException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -14,10 +17,18 @@ import java.util.List;
  */
 public class BDVeiculos {
     
-    private List<Passeio> bdPasseio = new ArrayList<>();
-    private List<Carga> bdCarga = new ArrayList<>();
+    private final List<Passeio> bdPasseio = new ArrayList<>();
+    private final List<Carga> bdCarga = new ArrayList<>();
+    private static BDVeiculos bdVeiculosUniq; // Singleton
         
-    public BDVeiculos(){
+    private BDVeiculos(){
+    }
+    
+    public static BDVeiculos getInstance(){
+        if (bdVeiculosUniq == null) {
+            bdVeiculosUniq = new BDVeiculos();
+        }
+        return bdVeiculosUniq;
     }
 
     public List<Passeio> getListPasseio() {

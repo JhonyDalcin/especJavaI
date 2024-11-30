@@ -1,3 +1,11 @@
-com\javai\cadastrarveiculos\VeicExistException.class
-com\javai\cadastrarveiculos\BDVeiculos.class
-com\javai\cadastrarveiculos\VelocException.class
+com\javai\cadastrarveiculos\service\Calcular.class
+com\javai\cadastrarveiculos\util\exception\VelocException.class
+com\javai\cadastrarveiculos\gui\MainPasseioPanel.class
+com\javai\cadastrarveiculos\model\Passeio.class
+com\javai\cadastrarveiculos\model\Motor.class
+com\javai\cadastrarveiculos\service\BDVeiculos.class
+com\javai\cadastrarveiculos\gui\MainCargaPanel.class
+com\javai\cadastrarveiculos\gui\MainWindow.class
+com\javai\cadastrarveiculos\model\Carga.class
+com\javai\cadastrarveiculos\model\Veiculo.class
+com\javai\cadastrarveiculos\util\exception\VeicExistException.class
