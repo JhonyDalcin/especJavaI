@@ -4,19 +4,18 @@
  */
 package com.javai.cadastrarveiculos.util.exception;
 
-import javax.swing.JOptionPane;
-
 /**
  *
  * @author jhony
  */
-public class VelocException extends Exception {
-
-    public VelocException() {
+public class EmptyTxtFieldException extends Exception {
+    
+    public EmptyTxtFieldException(){
     }
     
     @Override
     public String getMessage(){
-        return "Velocidade informada fora dos limites brasileiros!";
+        return "Todos os campos devem ser preenchidos!";
     }
+    
 }

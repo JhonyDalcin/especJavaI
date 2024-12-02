@@ -1,7 +1,8 @@
 C:\LocalDocuments\especTecJava\1.Modulo\JavaI\veiculos\especJavaI\src\main\java\com\javai\cadastrarveiculos\gui\MainCargaPanel.java
 C:\LocalDocuments\especTecJava\1.Modulo\JavaI\veiculos\especJavaI\src\main\java\com\javai\cadastrarveiculos\gui\MainPasseioPanel.java
 C:\LocalDocuments\especTecJava\1.Modulo\JavaI\veiculos\especJavaI\src\main\java\com\javai\cadastrarveiculos\gui\MainWindow.java
-C:\LocalDocuments\especTecJava\1.Modulo\JavaI\veiculos\especJavaI\src\main\java\com\javai\cadastrarveiculos\Leitura.java
+C:\LocalDocuments\especTecJava\1.Modulo\JavaI\veiculos\especJavaI\src\main\java\com\javai\cadastrarveiculos\gui\PasseioFindDeleteByPlatePanel.java
+C:\LocalDocuments\especTecJava\1.Modulo\JavaI\veiculos\especJavaI\src\main\java\com\javai\cadastrarveiculos\gui\PasseioRegisterPanel.java
 C:\LocalDocuments\especTecJava\1.Modulo\JavaI\veiculos\especJavaI\src\main\java\com\javai\cadastrarveiculos\model\Carga.java
 C:\LocalDocuments\especTecJava\1.Modulo\JavaI\veiculos\especJavaI\src\main\java\com\javai\cadastrarveiculos\model\Motor.java
 C:\LocalDocuments\especTecJava\1.Modulo\JavaI\veiculos\especJavaI\src\main\java\com\javai\cadastrarveiculos\model\Passeio.java
@@ -9,5 +10,6 @@ C:\LocalDocuments\especTecJava\1.Modulo\JavaI\veiculos\especJavaI\src\main\java\
 C:\LocalDocuments\especTecJava\1.Modulo\JavaI\veiculos\especJavaI\src\main\java\com\javai\cadastrarveiculos\service\BDVeiculos.java
 C:\LocalDocuments\especTecJava\1.Modulo\JavaI\veiculos\especJavaI\src\main\java\com\javai\cadastrarveiculos\service\Calcular.java
 C:\LocalDocuments\especTecJava\1.Modulo\JavaI\veiculos\especJavaI\src\main\java\com\javai\cadastrarveiculos\Teste.java
+C:\LocalDocuments\especTecJava\1.Modulo\JavaI\veiculos\especJavaI\src\main\java\com\javai\cadastrarveiculos\util\exception\EmptyTxtFieldException.java
 C:\LocalDocuments\especTecJava\1.Modulo\JavaI\veiculos\especJavaI\src\main\java\com\javai\cadastrarveiculos\util\exception\VeicExistException.java
 C:\LocalDocuments\especTecJava\1.Modulo\JavaI\veiculos\especJavaI\src\main\java\com\javai\cadastrarveiculos\util\exception\VelocException.java

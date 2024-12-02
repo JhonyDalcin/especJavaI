@@ -57,55 +57,45 @@ public class MainPasseioPanel extends JFrame{
 
         // buttons actions definition
         btnRegister.addActionListener((ActionEvent evt) -> {
-            btnRegisterActionListner(evt);
+            btnRegisterActionPerformed();
         });
 
         btnFindDeleteByPlate.addActionListener((ActionEvent evt) -> {
-            btnFindDeleteByPlate(evt);
+            btnFindDeleteByPlateActionPerformed();
         });
 
         btnPrintDelete.addActionListener((ActionEvent evt) -> {
-            btnPrintDeleteActionListner(evt);
+            btnPrintDeleteActionPerformed();
         });
 
         btnExit.addActionListener((ActionEvent evt) -> {
-            btnExitActionListner(evt);
+            btnExitActionPerformed();
         });
 
     }
 
-    private void btnRegisterActionListner(ActionEvent evt) {
+    private void btnRegisterActionPerformed() {
         openPasseioRegisterPanel();
     }
 
-    private void btnFindDeleteByPlate(ActionEvent evt) {
+    private void btnFindDeleteByPlateActionPerformed() {
         openPasseioFindDeleteByPlatePanel();
     }
 
-    private void btnPrintDeleteActionListner(ActionEvent evt) {
+    private void btnPrintDeleteActionPerformed() {
         openPasseioPrintDelete();
     }
 
-    private void btnExitActionListner(ActionEvent evt) {
-        exitMainPasseioPanel();
+    private void btnExitActionPerformed() {
+        dispose();
     }
 
     private void openPasseioRegisterPanel() {
-        JOptionPane.showMessageDialog(
-                null,
-                "Register Passeio here!",
-                "Passeio",
-                JOptionPane.INFORMATION_MESSAGE
-        );
+        PasseioRegisterPanel.getInstance().setVisible(true);
     }
 
     private void openPasseioFindDeleteByPlatePanel() {
-        JOptionPane.showMessageDialog(
-                null,
-                "Find Delete Passeio by plate here!",
-                "Passeio",
-                JOptionPane.INFORMATION_MESSAGE
-        );
+        PasseioFindDeleteByPlatePanel.getInstance().setVisible(true);
     }
 
     private void openPasseioPrintDelete() {
@@ -115,19 +105,6 @@ public class MainPasseioPanel extends JFrame{
                 "Passeio",
                 JOptionPane.INFORMATION_MESSAGE
         );
-    }
-
-    private void exitMainPasseioPanel() {
-
-        int confirmation = JOptionPane.showConfirmDialog(
-                null,
-                "You are exiting the current panel, are you sure?!",
-                "Exit Confirmation",
-                JOptionPane.YES_NO_OPTION
-        );
-        if (confirmation == 0) {
-            dispose();
-        }
     }
 
 }

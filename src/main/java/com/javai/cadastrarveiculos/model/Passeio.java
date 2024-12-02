@@ -16,6 +16,15 @@ public final class Passeio extends Veiculo implements Calcular {
     
     public Passeio (){
     }
+    
+    public Passeio (String placa, String marca, String modelo, 
+                    String cor, float velocMax, int qtdRodas,
+                    int qtdPassageiros, int potencia, int qtdPist){
+        
+        super(placa, marca, modelo, cor, velocMax, qtdRodas, qtdPist, potencia);
+        this.qtdPassageiros = qtdPassageiros;
+                 
+    }
 
     public int getQtdPassageiros() {
         return qtdPassageiros;

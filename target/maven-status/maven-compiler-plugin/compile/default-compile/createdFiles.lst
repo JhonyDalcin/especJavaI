@@ -1,6 +1,9 @@
+com\javai\cadastrarveiculos\gui\PasseioRegisterPanel.class
 com\javai\cadastrarveiculos\service\Calcular.class
 com\javai\cadastrarveiculos\util\exception\VelocException.class
 com\javai\cadastrarveiculos\gui\MainPasseioPanel.class
+com\javai\cadastrarveiculos\util\exception\EmptyTxtFieldException.class
+com\javai\cadastrarveiculos\gui\PasseioFindDeleteByPlatePanel.class
 com\javai\cadastrarveiculos\model\Passeio.class
 com\javai\cadastrarveiculos\model\Motor.class
 com\javai\cadastrarveiculos\service\BDVeiculos.class

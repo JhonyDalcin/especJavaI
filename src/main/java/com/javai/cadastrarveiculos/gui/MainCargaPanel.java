@@ -57,37 +57,37 @@ public class MainCargaPanel extends JFrame {
         
         //Buttons actions definition
         btnRegister.addActionListener((ActionEvent evt) -> {
-            btnRegisterActionListner(evt);
+            btnRegisterActionPerformed();
         });
         
         btnFindDeleteByPlate.addActionListener((ActionEvent evt) -> {
-            btnFindDeleteByPlate(evt);
+            btnFindDeleteByPlatePerformed();
         });
         
         btnPrintDelete.addActionListener((ActionEvent evt) -> {
-            btnPrintDeleteActionListner(evt);
+            btnPrintDeleteActionPerformed();
         });
         
         btnExit.addActionListener((ActionEvent evt) -> {
-            btnExitActionListner(evt);
+            btnExitActionPerformed();
         });
                 
     }
     
-    private void btnRegisterActionListner(ActionEvent evt) {
+    private void btnRegisterActionPerformed() {
         openCargaRegisterPanel();
     }
     
-    private void btnFindDeleteByPlate(ActionEvent evt) {
+    private void btnFindDeleteByPlatePerformed() {
         openCargaFindDeleteByPlatePanel();
     }
     
-    private void btnPrintDeleteActionListner(ActionEvent evt) {
+    private void btnPrintDeleteActionPerformed() {
         openCargaPrintDelete();
     }
     
-    private void btnExitActionListner(ActionEvent evt) {
-        exitConfirmationMessage();
+    private void btnExitActionPerformed() {
+        dispose();
     }
     
     private void openCargaRegisterPanel(){
@@ -116,17 +116,5 @@ public class MainCargaPanel extends JFrame {
                 JOptionPane.INFORMATION_MESSAGE
         );
     }
-    
-    private void exitConfirmationMessage(){
-        
-            int confirmation = JOptionPane.showConfirmDialog(
-                null,
-                "You are exiting the current panel, are you sure?!",
-                "Exit Confirmation",
-                JOptionPane.YES_NO_OPTION
-            );
-            if (confirmation == 0){
-                dispose();
-            }
-    } 
+
 }

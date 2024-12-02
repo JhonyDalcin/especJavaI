@@ -4,6 +4,8 @@
  */
 package com.javai.cadastrarveiculos.util.exception;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author jhony
@@ -11,7 +13,11 @@ package com.javai.cadastrarveiculos.util.exception;
 public class VeicExistException extends Exception{
     
     public VeicExistException() {
-        System.out.println("\nPlaca do veiculo informada ja cadastrada!");
+    }
+    
+    @Override
+    public String getMessage(){
+        return "Placa informada EXISTENTE!\nOperação não realizada!";
     }
     
 }
