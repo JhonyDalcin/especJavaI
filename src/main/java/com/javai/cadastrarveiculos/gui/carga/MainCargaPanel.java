@@ -1,4 +1,4 @@
-package com.javai.cadastrarveiculos.gui;
+package com.javai.cadastrarveiculos.gui.carga;
 
 import java.awt.Dimension;
 import java.awt.event.ActionEvent;
@@ -6,7 +6,6 @@ import javax.swing.Box;
 import javax.swing.BoxLayout;
 import javax.swing.JButton;
 import javax.swing.JFrame;
-import javax.swing.JOptionPane;
 
 /**
  *
@@ -33,6 +32,7 @@ public class MainCargaPanel extends JFrame {
     private void loadWindow(){
         
         //Panel layout design
+        setTitle("Veiculos de Carga");
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         setSize(width, heigth);
         setLayout(new BoxLayout(getContentPane(), BoxLayout.Y_AXIS));
@@ -91,30 +91,15 @@ public class MainCargaPanel extends JFrame {
     }
     
     private void openCargaRegisterPanel(){
-        JOptionPane.showMessageDialog(
-                null,
-                "Register Passeio here!",
-                "Passeio",
-                JOptionPane.INFORMATION_MESSAGE
-        );
+        CargaRegisterPanel.getInstance().setVisible(true);
     }
     
     private void openCargaFindDeleteByPlatePanel(){
-        JOptionPane.showMessageDialog(
-                null,
-                "Find Delete Passeio by plate here!",
-                "Passeio",
-                JOptionPane.INFORMATION_MESSAGE
-        );
+        CargaFindDeleteByPlatePanel.getInstance().setVisible(true);
     } 
     
     private void openCargaPrintDelete(){
-        JOptionPane.showMessageDialog(
-                null,
-                "Print and Delete here!",
-                "Passeio",
-                JOptionPane.INFORMATION_MESSAGE
-        );
+        CargaPrintDeletePanel.getInstance().setVisible(true);
     }
 
 }

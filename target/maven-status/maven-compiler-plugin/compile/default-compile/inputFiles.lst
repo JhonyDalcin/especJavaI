@@ -1,8 +1,12 @@
-C:\LocalDocuments\especTecJava\1.Modulo\JavaI\veiculos\especJavaI\src\main\java\com\javai\cadastrarveiculos\gui\MainCargaPanel.java
-C:\LocalDocuments\especTecJava\1.Modulo\JavaI\veiculos\especJavaI\src\main\java\com\javai\cadastrarveiculos\gui\MainPasseioPanel.java
+C:\LocalDocuments\especTecJava\1.Modulo\JavaI\veiculos\especJavaI\src\main\java\com\javai\cadastrarveiculos\gui\carga\CargaFindDeleteByPlatePanel.java
+C:\LocalDocuments\especTecJava\1.Modulo\JavaI\veiculos\especJavaI\src\main\java\com\javai\cadastrarveiculos\gui\carga\CargaPrintDeletePanel.java
+C:\LocalDocuments\especTecJava\1.Modulo\JavaI\veiculos\especJavaI\src\main\java\com\javai\cadastrarveiculos\gui\carga\CargaRegisterPanel.java
+C:\LocalDocuments\especTecJava\1.Modulo\JavaI\veiculos\especJavaI\src\main\java\com\javai\cadastrarveiculos\gui\carga\MainCargaPanel.java
 C:\LocalDocuments\especTecJava\1.Modulo\JavaI\veiculos\especJavaI\src\main\java\com\javai\cadastrarveiculos\gui\MainWindow.java
-C:\LocalDocuments\especTecJava\1.Modulo\JavaI\veiculos\especJavaI\src\main\java\com\javai\cadastrarveiculos\gui\PasseioFindDeleteByPlatePanel.java
-C:\LocalDocuments\especTecJava\1.Modulo\JavaI\veiculos\especJavaI\src\main\java\com\javai\cadastrarveiculos\gui\PasseioRegisterPanel.java
+C:\LocalDocuments\especTecJava\1.Modulo\JavaI\veiculos\especJavaI\src\main\java\com\javai\cadastrarveiculos\gui\passeio\MainPasseioPanel.java
+C:\LocalDocuments\especTecJava\1.Modulo\JavaI\veiculos\especJavaI\src\main\java\com\javai\cadastrarveiculos\gui\passeio\PasseioFindDeleteByPlatePanel.java
+C:\LocalDocuments\especTecJava\1.Modulo\JavaI\veiculos\especJavaI\src\main\java\com\javai\cadastrarveiculos\gui\passeio\PasseioPrintDeletePanel.java
+C:\LocalDocuments\especTecJava\1.Modulo\JavaI\veiculos\especJavaI\src\main\java\com\javai\cadastrarveiculos\gui\passeio\PasseioRegisterPanel.java
 C:\LocalDocuments\especTecJava\1.Modulo\JavaI\veiculos\especJavaI\src\main\java\com\javai\cadastrarveiculos\model\Carga.java
 C:\LocalDocuments\especTecJava\1.Modulo\JavaI\veiculos\especJavaI\src\main\java\com\javai\cadastrarveiculos\model\Motor.java
 C:\LocalDocuments\especTecJava\1.Modulo\JavaI\veiculos\especJavaI\src\main\java\com\javai\cadastrarveiculos\model\Passeio.java

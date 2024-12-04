@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package com.javai.cadastrarveiculos.gui;
+package com.javai.cadastrarveiculos.gui.passeio;
 
 import com.javai.cadastrarveiculos.model.Passeio;
 import com.javai.cadastrarveiculos.service.BDVeiculos;

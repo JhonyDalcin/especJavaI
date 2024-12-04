@@ -1,5 +1,7 @@
 package com.javai.cadastrarveiculos.gui;
 
+import com.javai.cadastrarveiculos.gui.carga.MainCargaPanel;
+import com.javai.cadastrarveiculos.gui.passeio.MainPasseioPanel;
 import java.awt.Dimension;
 import java.awt.event.ActionEvent;
 import javax.swing.Box;
